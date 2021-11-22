@@ -1,0 +1,23 @@
+{% extends 'bases.html' %}
+{% block title %}{{family.name}}{% endblock %}
+{% block content %}
+{% if family%}
+
+
+<h5 class="card-title">{{family.name}}</h5>
+{% for animal in family.animal_set.all %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{animal.name}}</h5>
+        <p class="card-text">{{animal.name}} Legs</p>
+        <p class="card-text">{{animal.legs}} Legs</p>
+        <p class="card-text">weight: {{animal.weight}}</p>
+        <p class="card-text">height: {{animal.height}}</p>
+    </div>
+</div>
+{% endfor %}
+<br>
+ <a href="{% url 'all_animals' %}" class="btn btn-primary">All the animals</a>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'bases.html' %}
+{% block title %}{{animal.name}}{% endblock %}
+{% block content %}
+{% if animal%}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{animal.name}}</h5>
+        <h6 class="card-text">{{animal.family.name}}</h6>
+        <p class="card-text">{{animal.legs}} Legs</p>
+        <p class="card-text">weight: {{animal.weight}}</p>
+        <p class="card-text">height: {{animal.height}}</p>
+        <a href="{% url 'all_animals' %}" class="btn btn-primary">All the animals</a>
+      </div>
+    </div>
+{% endif %}
+{% endblock %}
