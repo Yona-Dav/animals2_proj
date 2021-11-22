@@ -5,19 +5,26 @@
 
 
 <h5 class="card-title">{{family.name}}</h5>
+<h6 class="card-title">Number of animals: {{num_animals}}</h6>
+<div class="row">
+
 {% for animal in family.animal_set.all %}
+
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">{{animal.name}}</h5>
-        <p class="card-text">{{animal.name}} Legs</p>
         <p class="card-text">{{animal.legs}} Legs</p>
         <p class="card-text">weight: {{animal.weight}}</p>
         <p class="card-text">height: {{animal.height}}</p>
+        <p class="card-text">speed: {{animal.speed}}</p>
+        <img class="card-img-top" src="{{animal.image}}" alt="Card image cap">
     </div>
 </div>
 {% endfor %}
+</div>
 <br>
  <a href="{% url 'all_animals' %}" class="btn btn-primary">All the animals</a>
 {% endif %}
 
 {% endblock %}
+

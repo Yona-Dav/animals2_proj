@@ -1,12 +1,11 @@
 {% extends 'bases.html' %}
-{% block title %}All animals{% endblock %}
+{% block title %}Speed{% endblock %}
 {% block content %}
 <div class="row">
-{% for animal in animals %}
+{% for animal in speeds %}
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">{{animal.name}}</h5>
-        <h6 class="card-text">{{animal.family.name}}</h6>
         <p class="card-text">{{animal.legs}} Legs</p>
         <p class="card-text">weight: {{animal.weight}}</p>
         <p class="card-text">height: {{animal.height}}</p>
